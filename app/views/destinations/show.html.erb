@@ -1,0 +1,8 @@
+<h1> Place: <%= @destination.name %> </h1>
+<h3> Country: <%= @destination.country %></h3>
+
+<% @destination.most_reacent.each do |post| %>
+   <li> <%= post.title %> </li>
+<% end %>
+
+<h2><%= @destination.feactured.title  %></h2>
