@@ -19,4 +19,10 @@ class Blogger < ApplicationRecord
             post.likes
         end
     end
+
+    def most_posts_destinations
+        self.destinations.max_by(5) do |d|
+            d.posts.where(blogger: self).count
+        end
+    end
 end

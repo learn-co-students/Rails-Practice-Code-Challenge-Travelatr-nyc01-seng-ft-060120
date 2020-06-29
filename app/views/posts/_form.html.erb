@@ -5,8 +5,16 @@
     <p><%=f.text_area :content%></p>
 
     <p><%=f.collection_select :blogger_id, @bloggers, :id, :name%></p>
-    <p><%=f.collection_select :destinaiton_id, @destinaitons, :id, :name%></p>
+    <p><%=f.collection_select :destination_id, @destinations, :id, :name%></p>
 
     <br>
     <p><%=f.submit%></p>
-<%end%>
+<%end%> 
+
+<div class='error'>
+  <% if flash[:my_errors] %>
+    <% flash[:my_errors].each do |error| %>
+      <p><%= error %></p>
+    <% end %>
+  <% end %>
+</div>
