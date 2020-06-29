@@ -1,3 +1,13 @@
 <h1>City: <%= @destination.name %></h1>
 <p>Country: <%= @destination.country %></p>
 
+<p>Featured Post: <%= link_to @destination.most_liked.title, post_path(@destination.most_liked) %></p>
+
+<h3>Bloggers:</h3>
+<% @destination.bloggers.each do |blogger| %>
+<p><%= link_to blogger.name, blogger_path(blogger) %></p>
+<% end %>
+
+<p>Average age of bloggers: <%= @destination.average_age %></p>
+
+
