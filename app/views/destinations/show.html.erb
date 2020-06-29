@@ -10,4 +10,10 @@
 
 <p>Average age of bloggers: <%= @destination.average_age %></p>
 
+<h5>5 Most Recent Posts on this Destination:</h5>
+<% @destination.posts.last(5).each do |post| %>
+<p><%= link_to post.title, post_path(post) %>
+<% end %>
+
+
 
