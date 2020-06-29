@@ -1,0 +1,11 @@
+<h1><%=@blogger.name%></h1>
+
+<h3>Top 5 Written About Destinations</h3>
+<% @blogger.most_posts_destinations.each do |d| %>
+    <%= link_to d.name, destination_path(d) %></br>
+<% end %>
+
+<p>Likes: <%=@blogger.likes%></p>
+<% if @blogger.most_liked %>
+    <%=link_to 'Featured Post: ' + @blogger.most_liked.title, post_path(@blogger.most_liked)%>
+<% end %>
