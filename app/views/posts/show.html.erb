@@ -1,7 +1,11 @@
 <h1> <%= @post.title %> </h1>
 
 <p> <%= @post.content %></p>
-<p> <%= link_to @post.blogger.name, blogger_path(@post.blogger) %></p>
+<p> Blogger: <%= link_to @post.blogger.name, blogger_path(@post.blogger) %></p>
+<p> Destination: <%= link_to @post.destination.name, destination_path(@post.destination) %></p>
+
+<p><%= link_to "Edit this post", edit_post_path(@post.id) %>
+
 
 
 

@@ -8,7 +8,16 @@ class Blogger < ApplicationRecord
 
 # total likes 
     def total_likes
-        self.posts.map {|post| post.likes}
+        numbers_arr = self.posts.map do |post| 
+            post.likes
     end 
+    numbers_arr.inject(0) {|sum,x| sum + x}
+    end
+
+    def most_liked
+       self.posts.max_by do |post|
+            post.likes
+        end
+    end
 
 end

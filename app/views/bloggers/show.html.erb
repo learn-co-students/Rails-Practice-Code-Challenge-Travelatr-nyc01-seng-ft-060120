@@ -2,4 +2,5 @@
 
 <p>Bio: <%= @blogger.bio %></p>
 <p>Age: <%= @blogger.age %></p>
-<p> <%= @blogger.total_likes %></p>
+<p>Total Likes: <%= @blogger.total_likes %></p>
+<p><%= link_to @blogger.most_liked.title, post_path(@blogger.most_liked) %></p>
