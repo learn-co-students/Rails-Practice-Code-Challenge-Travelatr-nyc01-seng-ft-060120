@@ -13,7 +13,7 @@ class DestinationsController < ApplicationController
     end
 
     def show
-        @destination = Destination.find_by(params[:id])
+        @destination = Destination.find(params[:id])
     end
 
     private

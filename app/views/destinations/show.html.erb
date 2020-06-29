@@ -1,1 +1,18 @@
 <h1><%= @destination.name %></h1>
+
+<p>Most Recent Posts:</p>
+<ul>
+<% @destination.most_recent_posts.each do |post|%>
+    <li><%= link_to post.title, post_path(post)%></li>
+<%end%>
+</ul>
+
+<% if @destination.most_liked_post%>
+<p>Most Liked Post:</p>
+<%= link_to @destination.most_liked_post.title, post_path(@destination.most_liked_post)%>
+<%end%>
+
+
+<p>Average Age of Bloggers who Posted for this Destination: <%= @destination.average_age%></p>
+
+
