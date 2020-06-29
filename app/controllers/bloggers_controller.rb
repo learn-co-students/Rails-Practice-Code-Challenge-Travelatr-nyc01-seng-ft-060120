@@ -19,7 +19,7 @@ class BloggersController < ApplicationController
     end
 
     def show
-        @blogger = Blogger.find_by(params[:id])
+        @blogger = Blogger.find(params[:id])
     end
 
     private
