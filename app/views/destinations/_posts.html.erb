@@ -1,7 +1,9 @@
 
-<% @destination.ordered_posts.take(5).each do |post| %>
-  <p><%= post.title %></p>
-  <p><%= post.content %></p>
-  <p><%= post.likes %></p>
+<% @destination.ordered_posts_by_date.take(5).each do |post| %>
+  <p><strong>Title: </strong> <%= post.title %></p>
+  <p><strong>Content: </strong> <%= post.content %></p>
+  <p><strong>Likes: </strong><%= post.likes %></p>
+  <p><strong>Average Age of Blogger: </strong><%= @destination.average_age_of_blogger%></p>
+
 <% end %>
 

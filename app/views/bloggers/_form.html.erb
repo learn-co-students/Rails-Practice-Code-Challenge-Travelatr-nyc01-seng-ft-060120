@@ -1,2 +1,8 @@
 <h2><%= blogger.name %>, <%= blogger.age %></h2>
   <%= blogger.bio %>
+  <%= button_to "Edit Blogger", edit_blogger_path(blogger), :method => :get %>
+
+  <p><strong>Total Likes: </strong><%= blogger.total_likes %></p>
+
+  <p><strong>Featured Post: </strong><%= link_to blogger.featured_post_title, post_path(blogger.featured_post) %></p>
+  

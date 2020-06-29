@@ -17,4 +17,25 @@ class Blogger < ApplicationRecord
     validates_presence_of :age, numericality: {:minimum => 1}
     validates_presence_of :bio
     validates_length_of :bio, minimum: 31
+
+    def total_likes
+        sum = 0
+        self.posts.each do |p|
+            sum += p.likes
+        end
+        sum
+    end
+
+     def featured_post
+        post = posts.max_by { |post| post.likes }
+     end
+
+     def featured_post_title
+        featured_post.title
+     end
+
+     def ordered_posts_by_date
+        self.posts.order('posts.created_at DESC')
+     end
+
 end

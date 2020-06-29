@@ -8,6 +8,10 @@ class DestinationsController < ApplicationController
   def show
   end
 
+  def new
+    @destination = Destination.new(destination_params)
+  end
+
 
   private
   def destination_params

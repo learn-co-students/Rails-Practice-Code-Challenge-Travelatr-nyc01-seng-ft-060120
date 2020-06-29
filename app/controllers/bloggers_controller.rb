@@ -1,5 +1,5 @@
 class BloggersController < ApplicationController
-  before_action :set_blogger, only: [:show]
+  before_action :set_blogger, only: [:show, :edit, :update]
   
   def show
   end
@@ -11,6 +11,14 @@ class BloggersController < ApplicationController
   def create
     @blogger = Blogger.create(blogger_params)
     redirect_to @blogger
+  end
+
+  def update
+    @blogger = Blogger.update(blogger_params)
+    redirect_to @blogger
+  end
+  
+  def edit
   end
 
 
