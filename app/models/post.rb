@@ -17,4 +17,6 @@ class Post < ApplicationRecord
 
     validates_presence_of :title, :content
     validates_presence_of :likes, numericality: {:minimum => 0}
+
+    
 end

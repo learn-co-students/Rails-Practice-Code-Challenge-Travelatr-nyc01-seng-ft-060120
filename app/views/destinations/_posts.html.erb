@@ -1,0 +1,7 @@
+
+<% @destination.ordered_posts.take(5).each do |post| %>
+  <p><%= post.title %></p>
+  <p><%= post.content %></p>
+  <p><%= post.likes %></p>
+<% end %>
+

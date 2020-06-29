@@ -13,4 +13,12 @@ class Destination < ApplicationRecord
     has_many  :bloggers, through: :posts
 
     validates_presence_of :name, :country
+
+    def featured_post
+        post = posts.max_by { |post| post.blogger_id }
+    end
+
+    def remaining_posts
+        self.posts
+    end
 end
