@@ -1,9 +1,26 @@
+<strong>Featured Post:</strong>
+   <p><strong>Title: </strong> 
+    <%= link_to @destination.feature_title, post_path(@destination.featured_post) %>
+  </p>
 
-<% @destination.ordered_posts_by_date.take(5).each do |post| %>
-  <p><strong>Title: </strong> <%= post.title %></p>
+  <p><strong>Blogger: </strong>
+    <%= link_to @destination.feature_blogger_name, blogger_path(@destination.featured_post.blogger) %>
+  </p>  
+  <p><strong>Content: </strong>
+    <%= @destination.feature_content %>
+  </p>
+  <p><strong>Likes: </strong><%= @destination.feature_likes %></p>
+
+  <hr>
+<p>Up to 5 Most Recent Posts: </p>
+<% @destination.ordered_posts_by_date.each do |post| %>
+  <p><strong>Title: </strong> <%= link_to post.title, post_path(post) %></p>
+  <p><strong>Blogger: </strong>
+    <%= link_to post.blogger_name, blogger_path(post.blogger) %>
+  </p>  
   <p><strong>Content: </strong> <%= post.content %></p>
-  <p><strong>Likes: </strong><%= post.likes %></p>
   <p><strong>Average Age of Blogger: </strong><%= @destination.average_age_of_blogger%></p>
+    <p><strong>Likes: </strong><%= post.likes %></p>
 
 <% end %>
 
