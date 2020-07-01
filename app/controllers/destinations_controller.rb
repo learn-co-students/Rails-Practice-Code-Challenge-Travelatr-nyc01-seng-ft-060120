@@ -4,14 +4,6 @@ class DestinationsController < ApplicationController
   def index
     @destinations = Destination.all
   end
-  
-  def show
-  end
-
-  def new
-    @destination = Destination.new(destination_params)
-  end
-
 
   private
   def destination_params

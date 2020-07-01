@@ -1,8 +1,5 @@
 class BloggersController < ApplicationController
   before_action :set_blogger, only: [:show, :edit, :update]
-  
-  def show
-  end
 
   def new
     @blogger = Blogger.new
@@ -17,10 +14,6 @@ class BloggersController < ApplicationController
     @blogger = Blogger.update(blogger_params)
     redirect_to @blogger
   end
-  
-  def edit
-  end
-
 
   private
   def blogger_params

@@ -1,14 +1,4 @@
-# == Schema Information
-#
-# Table name: bloggers
-#
-#  id         :integer          not null, primary key
-#  name       :string
-#  bio        :string
-#  age        :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#
+
 class Blogger < ApplicationRecord
     has_many :posts
     has_many :destinations, through: :posts

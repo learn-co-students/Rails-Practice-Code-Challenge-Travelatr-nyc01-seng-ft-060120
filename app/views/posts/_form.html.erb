@@ -1,8 +1,8 @@
 <h3><%= @post.title %></h3> <br>
 <%= @post.content %> <br>
-<p>Destination: <%= link_to @post.destination_name, destination_path %>, <%= @post.country_name %>
-</p>
-<p>Blogger: <%= link_to @post.blogger_name, blogger_path %></p>
 
+<p>Destination: <%= link_to @post.destination_name, destination_path %>, <%= @post.country_name %></p>
+<p>Blogger: <%= link_to @post.blogger_name, blogger_path %></p>
 <p>Likes: <%= @post.likes %></p>
+
 <p><%= button_to "Like", add_like_post_path(@post), method: :get %></p>
